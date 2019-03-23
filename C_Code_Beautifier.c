@@ -14,13 +14,16 @@
 	Code on!! 
 */
 
-
 #include<stdio.h>
 #include<string.h>
+#include<stdlib.h>
+#include"header.h"
 
-void trim(char * str,int flag);
-void add_indent(char*s, int count);
-void beautify(char* src);
+
+void trim(char* str,int flag);
+void add_indent(char*s,int count);
+void beautify(char*src);
+
 
 void trim(char * str,int flag)
 {
@@ -85,7 +88,9 @@ void beautify(char* src)
 		while(buffer[i]!='\0')
 		{
 			if(buffer[i]!='{' && buffer[i]!='}' && buffer[i]!=';')
+			{
 				token[j++]=buffer[i];
+			}
 			else
 			{
 				token[j]='\0';
@@ -101,10 +106,11 @@ void beautify(char* src)
 					add_indent(token,indent);
 					fprintf(fp2, "%s\n", token);
 					strcpy(token,"{");
+					add_indent(token,indent);
 					fprintf(fp2, "%s\n", token);
 					++indent;
 				}
-				else if (buffer[i]=='}')
+				else if (buffer[i]=='}') 
 				{
 					indent--;
 					strcpy(token,"}");
