@@ -1,1 +1,2 @@
 # Source Code Beautifier
+This repository is aimed to contain source code beautifiers of all programming language. Right now only a C language source code beautifier is available which is written in C. The same also works for java source codes. Just compile this file and execute. Give an input file name and the beautified code will be written on a new file named final.c You can make small changes to make this program work according to your expectation as the code is very simple and understandable.
